@@ -8,14 +8,15 @@ import axios from 'axios';
 
 const { REACT_APP_SERVER_URL } = process.env;
 
-function Favourites() {
+function Favourites(props) {
   const [favourites, setFavourites] = useState([]);
   const classes = useStyles();
   const location = useLocation().pathname.slice(1);
 
   const getFavourites = async () => {
+    const queryStr = props.match.params.id ? `/?id=${props.match.params.id}` : ''
     try {
-      const res = await axios.get(`${REACT_APP_SERVER_URL}/images`)
+      const res = await axios.get(`${REACT_APP_SERVER_URL}/images${queryStr}`)
       setFavourites([...res.data.reverse()])
     } catch (e) {
       console.log(e)

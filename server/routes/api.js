@@ -26,7 +26,9 @@ router.delete('/image/:id', async (req,res) => {
 
 router.get('/images', async (req, res) => {
   try {
-    const images = await Image.find({})
+    const { id } = req.query
+    let images = id ? await Image.findById({ _id: id }) : await Image.find({})
+    images = Array.isArray(images) ? images : [images]
     res.send(images)
   } catch (e) {
     console.log(e)

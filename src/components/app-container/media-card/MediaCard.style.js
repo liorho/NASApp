@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
   },
   explanation: {
     fontFamily: "'Montserrat', sans-serif",
+    marginBottom: "0.5em"
   },
   homeRoot: {
     borderRadius: 0,
