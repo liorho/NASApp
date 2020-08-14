@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     borderRadius: 0,
     boxShadow: 'none',
+    // opacity: '0'
   },
 }));
 

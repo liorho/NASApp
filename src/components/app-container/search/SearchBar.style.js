@@ -6,10 +6,13 @@ const useStyles = makeStyles((theme) => ({
     // fontWeight: 'bold',
     // fontSize: '2em',
     marginTop: '2vh',
+    color: "white"
   },
   input: {
     fontFamily: "'Red Rose', cursive",
     fontWeight: 'bold',
+    // backgroundColor: "black",
+    // opacity: "0.5",
   },
   button: {
     fontFamily: "'Red Rose', cursive",

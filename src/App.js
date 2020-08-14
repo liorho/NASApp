@@ -1,7 +1,6 @@
-import React, { useReducer, useState, createContext, Fragment } from 'react';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
-import { SnackbarContent, Slide, Fade, Snackbar, Container, Grid, CardMedia, Typography, Paper, Button, IconButton } from '@material-ui/core';
-import axios from 'axios';
+import React, { useState, createContext } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { SnackbarContent, Slide, Snackbar } from '@material-ui/core';
 import NavBar from './components/navbar/NavBar.jsx';
 import AppContainer from './components/app-container/AppContainer.jsx';
 import './App.css';
@@ -16,7 +15,7 @@ function App() {
   const [transition, setTransition] = useState(() => Transition);
 
   return (
-    <div>
+    <div id="App">
       <HandleSnackbar.Provider value={{ setSnackbar, setSnackbarMsg }}>
         <Router>
           <NavBar />
@@ -25,9 +24,7 @@ function App() {
       </HandleSnackbar.Provider>
 
       <Snackbar
-        bodyStyle={{ background: 'blue' }}
         className='snackbar'
-        // message={snackbarMsg}
         open={snackbar}
         autoHideDuration={3000}
         onClose={() => {
@@ -37,11 +34,17 @@ function App() {
         <SnackbarContent
           style={{
             backgroundColor: '#3c2c3e',
-            fontFamily: "'Montserrat', sans-serif",
+            fontFamily: "'Red Rose', cursive",
+            // fontFamily: "'Montserrat', sans-serif",
             fontWeight: 'bold',
-            fontSize: '0.75rem'
+            fontSize: '1rem',
+            justifyContent: 'center',
+            width: "50%",
+            opacity: '0.9'
+            // padding: '8px'
           }}
           message={snackbarMsg}
+          // anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
         />
       </Snackbar>
     </div>

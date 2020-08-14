@@ -15,9 +15,12 @@ function SearchBar(props) {
       ev.preventDefault();
     }
   }
+
+
   return (
     <Grid container justify='center' className={classes.root} >
       <TextField
+        // variant="filled"
         size='small'
         rowsMax={4}
         variant='outlined'
@@ -26,9 +29,12 @@ function SearchBar(props) {
         onChange={handleChange}
         onKeyPress={searchResults}
         fullWidth
+        label="SEARCH THE UNIVERSE"
         InputProps={{
           startAdornment: <InputAdornment position="start"><Icon>search</Icon></InputAdornment>,
+          // className: classes.multilineColor
         }}
+        // gutterBottom
       />
     </Grid>
   );

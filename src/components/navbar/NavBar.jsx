@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Avatar, AppBar, Toolbar, CardMedia, Grid, Typography } from '@material-ui/core';
+import { Avatar, AppBar, Toolbar} from '@material-ui/core';
 import NavBarLinks from './NavBarLinks';
 import useStyles from './NavBar.style';
 
-function NavBar(props) {
+function NavBar() {
   const classes = useStyles();
   const [currentPage, setCurrentPage] = useState('');
   return (

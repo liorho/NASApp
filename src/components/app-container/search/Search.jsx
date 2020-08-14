@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Container, Grid, Card } from '@material-ui/core';
+import { Container, Grid, Card, CardMedia } from '@material-ui/core';
 import { BrowserRouter as Router, Route, useLocation } from 'react-router-dom';
 
 import axios from 'axios';
 import SearchBar from './SearchBar.jsx';
 import MediaCard from '../media-card/MediaCard.jsx';
-import useStyles from './Search.style'
+import useStyles from './Search.style';
 
 const { REACT_APP_NASA_IMAGES_URL } = process.env;
 
@@ -22,7 +22,7 @@ function Search(props) {
         url: result.links[0].href,
         title: result.data[0].title,
         explanation: result.data[0].description,
-        like: false
+        like: false,
       }));
     setResults([...results]);
   };
@@ -30,12 +30,18 @@ function Search(props) {
   return (
     <Container>
       <SearchBar getResults={getResults} />
-      <Grid container alignItems="stretch">
-        {results.map((result) => (
-          <Grid key={result.url} className={classes.root} item component={Card} xs={12} sm={6} lg={4} xl={3} className={classes.root}>
-            <MediaCard data={result} location={location} />
-          </Grid>
+      <Grid container alignItems='stretch'>
+        {results.map((result, i) => (
+          // <Grid key={result.url} className={classes.root} item component={Card} xs={12} sm={6} lg={4} xl={3} className={classes.root}>
+          <MediaCard key={i} data={result} />
+          // </Grid>
         ))}
+        <CardMedia
+          style={{ marginTop: '8px', height: '80vh' }}
+          height='100%'
+          component='img'
+          image={'https://upload.wikimedia.org/wikipedia/commons/6/69/NASA-HS201427a-HubbleUltraDeepField2014-20140603.jpg'}
+        />
       </Grid>
     </Container>
   );
