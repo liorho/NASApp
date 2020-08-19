@@ -44,7 +44,7 @@ function MediaCard(props) {
   const isBackBtn = location !== 'favourites' && location !== 'search' && location !== 'home';
 
   return (
-    <div>
+    // <div>
       <Card className={`${classes.root} ${!isFavOrSearch ? classes.homeRoot : ''}`}>
         <Typography id='title' align='center' gutterBottom className={`${classes.header} ${!isFavOrSearch ? classes.homeHeader : ''}`}>
           {title}
@@ -68,7 +68,7 @@ function MediaCard(props) {
           </Link>
         </Typography>
       </Card>
-    </div>
+    // </div>
   );
 }
 

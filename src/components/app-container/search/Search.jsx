@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Grid, Card, CardMedia } from '@material-ui/core';
-import { BrowserRouter as Router, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import axios from 'axios';
 import SearchBar from './SearchBar.jsx';
@@ -12,7 +12,6 @@ const { REACT_APP_NASA_IMAGES_URL } = process.env;
 function Search(props) {
   const [results, setResults] = useState([]);
   const classes = useStyles();
-  const location = useLocation().pathname.slice(1);
 
   const getResults = async (searchStr) => {
     const res = await axios.get(`${REACT_APP_NASA_IMAGES_URL}/search?q=${searchStr}`);
@@ -32,9 +31,9 @@ function Search(props) {
       <SearchBar getResults={getResults} />
       <Grid container alignItems='stretch'>
         {results.map((result, i) => (
-          // <Grid key={result.url} className={classes.root} item component={Card} xs={12} sm={6} lg={4} xl={3} className={classes.root}>
-          <MediaCard key={i} data={result} />
-          // </Grid>
+          <Grid key={result.url} className={classes.root} item component={Card} xs={12} sm={6} lg={4} xl={3} className={classes.root}>
+            <MediaCard key={i} data={result} />
+          </Grid>
         ))}
         <CardMedia
           style={{ marginTop: '8px', height: '80vh' }}

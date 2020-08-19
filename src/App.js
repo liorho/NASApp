@@ -1,6 +1,6 @@
 import React, { useState, createContext } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { SnackbarContent, Slide, Snackbar } from '@material-ui/core';
+import { SnackbarContent, Slide, Snackbar, makeStyles } from '@material-ui/core';
 import NavBar from './components/navbar/NavBar.jsx';
 import AppContainer from './components/app-container/AppContainer.jsx';
 import './App.css';
@@ -15,7 +15,7 @@ function App() {
   const [transition, setTransition] = useState(() => Transition);
 
   return (
-    <div id="App">
+    <div>
       <HandleSnackbar.Provider value={{ setSnackbar, setSnackbarMsg }}>
         <Router>
           <NavBar />
@@ -24,9 +24,9 @@ function App() {
       </HandleSnackbar.Provider>
 
       <Snackbar
-        className='snackbar'
+        // className='snackbar'
         open={snackbar}
-        autoHideDuration={3000}
+        autoHideDuration={6000}
         onClose={() => {
           setSnackbar(false);
         }}
