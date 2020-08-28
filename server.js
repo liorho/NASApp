@@ -5,11 +5,13 @@ const bodyParser = require('body-parser')
 const path = require('path')
 const api = require('./server/routes/api')
 
-require('dotenv').config()
+// Developement
+// require('dotenv').config()
 
 const { PORT, REACT_APP_MONGODB_URI } = process.env
 mongoose.connect(REACT_APP_MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true  })
 
+// Developement
 // app.use(function (req, res, next) {
 //   res.header('Access-Control-Allow-Origin', '*')
 //   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
