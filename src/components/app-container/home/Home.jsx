@@ -9,7 +9,6 @@ import axios from 'axios';
 
 // require('dotenv').config()
 const { REACT_APP_APOD_URL, REACT_APP_API_KEY } = process.env;
-console.log(process.env)
 
 function Home() {
   const [apod, setApod] = useState({});
@@ -19,8 +18,7 @@ function Home() {
 
   const getApod = async () => {
     try {
-      // const res = await axios.get(`${REACT_APP_APOD_URL}/apod?api_key=${REACT_APP_API_KEY}`);
-      const res = await axios.get(`https://api.nasa.gov/planetary/apod?api_key=bol5WjZ3645i00tImKUDafUGuG5jBoBhfSOMTrMy`);
+      const res = await axios.get(`${REACT_APP_APOD_URL}/apod?api_key=${REACT_APP_API_KEY}`);
       setApod({ ...res.data });
     } catch (e) {
       console.log(e.response.data.msg);
