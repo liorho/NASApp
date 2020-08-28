@@ -26,7 +26,7 @@ function App() {
       <Snackbar
         // className='snackbar'
         open={snackbar}
-        autoHideDuration={6000}
+        autoHideDuration={5000}
         onClose={() => {
           setSnackbar(false);
         }}
@@ -40,7 +40,7 @@ function App() {
             fontSize: '1rem',
             justifyContent: 'center',
             width: "50%",
-            opacity: '0.9'
+            opacity: '0.93'
             // padding: '8px'
           }}
           message={snackbarMsg}
