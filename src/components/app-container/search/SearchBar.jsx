@@ -1,9 +1,10 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, Fragment, useRef } from 'react';
 import { TextField, Button, Grid, Icon , InputAdornment} from '@material-ui/core';
 import useStyles from './SearchBar.style';
 
 function SearchBar(props) {
   const [searchStr, setInput] = useState('');
+  const inputEl = useRef(null)
   const classes = useStyles();
 
   const handleChange = (e) => setInput(e.target.value);
@@ -13,6 +14,7 @@ function SearchBar(props) {
     if (ev.key === 'Enter') {
       getResults()
       ev.preventDefault();
+      inputEl.current.blur()
     }
   }
 
@@ -21,6 +23,7 @@ function SearchBar(props) {
     <Grid container justify='center' className={classes.root} >
       <TextField
         // variant="filled"
+        ref={inputEl}
         size='small'
         rowsMax={4}
         variant='outlined'
