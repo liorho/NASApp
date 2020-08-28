@@ -36,7 +36,7 @@ function Search(props) {
           </Grid>
         ))}
         <CardMedia
-          style={{ marginTop: '8px', height: '80vh' }}
+          style={{ marginTop: '8px', height: '79vh' }}
           height='100%'
           component='img'
           image={'https://upload.wikimedia.org/wikipedia/commons/6/69/NASA-HS201427a-HubbleUltraDeepField2014-20140603.jpg'}
