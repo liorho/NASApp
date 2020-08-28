@@ -7,6 +7,7 @@ import { HandleSnackbar } from '../../../App'
 import useStyles from './Home.style';
 import axios from 'axios';
 
+require('dotenv').config()
 const { REACT_APP_APOD_URL, REACT_APP_API_KEY } = process.env;
 
 function Home() {
