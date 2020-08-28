@@ -22,7 +22,6 @@ function SearchBar(props) {
   return (
     <Grid container justify='center' className={classes.root} >
       <TextField
-        // variant="filled"
         inputRef={inputEl}
         size='small'
         rowsMax={4}
@@ -35,9 +34,7 @@ function SearchBar(props) {
         label="SEARCH THE UNIVERSE"
         InputProps={{
           startAdornment: <InputAdornment position="start"><Icon>search</Icon></InputAdornment>,
-          // className: classes.multilineColor
         }}
-        // gutterBottom
       />
     </Grid>
   );

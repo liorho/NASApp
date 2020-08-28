@@ -44,7 +44,6 @@ function MediaCard(props) {
   const isBackBtn = location !== 'favourites' && location !== 'search' && location !== 'home';
 
   return (
-    // <div>
       <Card className={`${classes.root} ${!isFavOrSearch ? classes.homeRoot : ''}`}>
         <Typography id='title' align='center' gutterBottom className={`${classes.header} ${!isFavOrSearch ? classes.homeHeader : ''}`}>
           {title}
@@ -60,7 +59,7 @@ function MediaCard(props) {
             {like ? <Icon size='big'>thumb_down</Icon> : <Icon>thumb_up</Icon>}
           </Button>
         </Typography>
-        <Typography align='center' id='back-btn' hidden={!isBackBtn}>
+        <Typography gutterBottom align='center' id='back-btn' hidden={!isBackBtn}>
           <Link to='/favourites'>
             <Button variant='outlined'>
               <Icon size='big'>keyboard_backspace_icon</Icon>
@@ -68,7 +67,6 @@ function MediaCard(props) {
           </Link>
         </Typography>
       </Card>
-    // </div>
   );
 }
 

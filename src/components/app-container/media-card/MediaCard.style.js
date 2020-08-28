@@ -4,7 +4,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     margin: '1em',
     padding: '0.5em',
-    height: "-webkit-fill-available",
+    // height: "-webkit-fill-available",
     // backgroundColor: "#f9ecf2"
   },
   header: {
