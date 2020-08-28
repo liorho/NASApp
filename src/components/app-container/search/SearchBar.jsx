@@ -23,7 +23,7 @@ function SearchBar(props) {
     <Grid container justify='center' className={classes.root} >
       <TextField
         // variant="filled"
-        ref={inputEl}
+        inputRef={inputEl}
         size='small'
         rowsMax={4}
         variant='outlined'
